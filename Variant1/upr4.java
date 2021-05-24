@@ -1,33 +1,33 @@
 package Variant1;
 import java.util.Scanner; // import the Scanner class 
 
-public class upr3 {
-    
+public class upr4 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a String to be encoded:");
-        String stringOne = scanner.next();
         System.out.println("Enter an encoding String:");
-        String stringTwo = scanner.next();
-        // Example input : qwertyuiopasdfghjklzxcvbnm
-        loopRules(stringTwo,scanner);
-        solution(stringTwo.toLowerCase(),stringOne.toLowerCase());
+        String encString = scanner.next();
+        //Example input XVSHJQEMZKTUIGAPOYLRWDCFBN
+        //Example output OYWVGXNDMEJSHZQPFTCKLBUARI
+
+        loopRules(encString,scanner);
+        codeRevursal(encString);
+        
 
     }
 
-    static void loopRules(String stringTwo,Scanner scanner) {
+    static void loopRules(String encString,Scanner scanner) {
         while (true) {
-            if(onlyOneTime(stringTwo)){
+            if(onlyOneTime(encString)){
                 System.out.println("Letters must not repeat in the input 'encoding String'");
                }
-            else if(onlyLetters(stringTwo)==false) {
+            else if(onlyLetters(encString)==false) {
                 System.out.println("Encoding String must contain only letters and must be 26 letter long");
                }
             else{
                 break;
             }
             System.out.println("Enter an encoding String:");
-            stringTwo = scanner.next();
+            encString = scanner.next();
         }
     }
 
@@ -57,29 +57,29 @@ public class upr3 {
     }
         return checker;
     }
-    static void solution(String input_two, String input_one) {
-        char[] ch  = input_one.toCharArray();
-        int [] possition = new int[input_one.length()+1];
-        int counter = 0;
-        String finalString;
-        char codedString[] = new char[50];
-
-            for(char c : ch){
-                int temp = (int)c;
-                int temp_integer = 96; //for lower case
-                if(temp<=122 & temp>=97)
-                possition[counter] = temp-temp_integer - 1 ;
-                counter++;
-                
+    static void codeRevursal(String encodingString) {
+        char alphabet[] = new char[26];
+        int[] correctPositions = new int[26];
+        char output[] = new char[100];
+        int arrayCounter = 0;
+    
+        for(char c = 'a'; c <= 'z'; c++){
+            alphabet[arrayCounter] = c;
+            arrayCounter++;
+         }
+    
+        for (int i = 0; i < encodingString.length(); i++) {
+            for (int j = 0; j < encodingString.length(); j++) {
+                if(alphabet[i] == encodingString.charAt(j)){
+                    correctPositions[i] = j;
+                }
             }
-            for (int i = 0; i < possition.length; i++) {
-                codedString[i] = input_two.charAt(possition[i]);
-            }
-
-            finalString= String.valueOf(codedString);
-            System.out.println(finalString.toUpperCase());
-    }
+        }
+        for (int i = 0; i < correctPositions.length; i++) {
+            output[i] = alphabet[correctPositions[i]] ;
+        }
+    
+        String outputString = String.valueOf(output);
+        System.out.println(outputString.toUpperCase());
+     }
 }
-
-
-
