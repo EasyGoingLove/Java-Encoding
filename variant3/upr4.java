@@ -6,6 +6,8 @@ public class upr4 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a substitution code (26 letters from the alphabet , no repeat of charecers , no symbols):");
         String subCode = scanner.next();
+        //Example input XVSHJQEMZKTUIGAPOYLRWDCFBN
+        //Example output OYWVGXNDMEJSHZQPFTCKLBUARI
 
         while (true) {
             if(validateString(subCode)){
@@ -59,4 +61,3 @@ public class upr4 {
         System.out.println(outputString.toUpperCase());
      }
 }
-//alphabet.charAt(reversed[i])

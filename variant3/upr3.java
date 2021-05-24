@@ -11,7 +11,7 @@ public class upr3 {
         String input_two = scanner.next();
         // Example input : sdfaghjklzxcvbnmpoiuytrewq
         inputValidation(input_two,scanner);
-        solution(input_two,input_one);
+        solution(input_two.toLowerCase(),input_one.toLowerCase());
 
     }
 
@@ -62,7 +62,7 @@ public class upr3 {
         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         int arrayForPossition[] = new int[input_one.length()];
         int arrayCounter = 0;
-        char output[] = new char[50];
+        char output[] = new char[100];
 
         for (int i = 0; i < input_one.length(); i++) {
             for (int r = 0; r < alphabet.length; r++) {
@@ -80,7 +80,7 @@ public class upr3 {
           }
         }
         String outputString = String.valueOf(output);
-        System.out.println(outputString);
+        System.out.println(outputString.toUpperCase());
     }
 }
 
