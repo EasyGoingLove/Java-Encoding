@@ -9,7 +9,7 @@ public class upr4 {
         //Example input XVSHJQEMZKTUIGAPOYLRWDCFBN
         //Example output OYWVGXNDMEJSHZQPFTCKLBUARI
         correctInputLoop(encodingString,scanner);
-        reverseCode(encodingString);
+        reverseCode(encodingString.toLowerCase());
 
     }
     static void correctInputLoop(String encodingString,Scanner scanner) {

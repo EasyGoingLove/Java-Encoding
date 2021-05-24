@@ -10,7 +10,7 @@ public class upr3 {
         String encodingString = scanner.next();
         // Example input : zaqxswcdevfrbgtnhymjukilop
         correctInputLoop(encodingString,scanner);
-        solution(encodingString,encodedString);
+        solution(encodingString.toLowerCase(),encodedString.toLowerCase());
 
     }
 
@@ -85,7 +85,7 @@ public class upr3 {
           }
         }
         String str = String.valueOf(codedMsg);
-        System.out.println(str);
+        System.out.println(str.toUpperCase());
     }
 }
 
