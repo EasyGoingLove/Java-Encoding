@@ -1,10 +1,16 @@
 # Java-Encoding
 ![image](https://user-images.githubusercontent.com/50263561/119373252-e2d0a780-bcc0-11eb-9424-6403f280fedb.png)
   
-     if(subcode == "" ||subcode ==null ||message==""||message==null ){return null;}
-
-
-
+ 
+        if(subcode == "" ||subcode ==null ||message==""||message==null ){return null;}
+        
+          for (int i = 0; i < subcode.length(); i++) {
+              char ch = subcode.charAt(i);
+          if (Character.isLetter(ch) && subcode.indexOf(ch, i + 1) != -1  || !Character.isLetter(subcode.charAt(i)) || subcode.length()!=26) {
+               return null; 
+            }
+          }
+        
         char[] ch  = message.toCharArray();
         int [] possition = new int[message.length()+1];
         int counter = 0;
@@ -20,9 +26,13 @@
                 
             }
             for (int i = 0; i < possition.length; i++) {
+              
                 codedString[i] = subcode.charAt(possition[i]);
+                
             }
 
             finalString= String.valueOf(codedString);
+            System.out.println(finalString.toUpperCase());
             return finalString.toUpperCase();
-    }
+        }
+
