@@ -5,9 +5,8 @@
         for (int i = 0; i < subcode.length(); i++) {
              char ch = subcode.charAt(i);
             if (Character.isLetter(ch) && subcode.indexOf(ch, i + 1) != -1  || !Character.isLetter(subcode.charAt(i)) || subcode.length()!=26) {
-                System.out.println("flase");  return false;
+                 return false;
              }
          }
-         System.out.println("True");
           return true;
      }
