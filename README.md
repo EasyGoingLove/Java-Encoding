@@ -5,10 +5,11 @@
  if(subcode == "" ||subcode ==null){return null;}
         
         
+           if(largeamountoftext=="" || largeamountoftext ==null){return null;}
         
-        if(largeamountoftext=="" || largeamountoftext ==null){return null;}
         StringBuilder sb = new StringBuilder();
         Map<Character, Integer> charCountMap = new HashMap<>();
+        String str = "abc";
 
         int len = largeamountoftext.length();
          for(int i = 0; i < len; i++) {
@@ -23,4 +24,7 @@
                              sb.append(key);
                         }
            });
-           return sb.toString();
+           str = sb.toString().toUpperCase();
+           return str ;
+   
+  
