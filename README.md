@@ -6,7 +6,7 @@
              char ch = subcode.charAt(i);
             if (Character.isLetter(ch) && subcode.indexOf(ch, i + 1) != -1  || !Character.isLetter(subcode.charAt(i)) || subcode.length()!=26) {
                  return false;
-             }
+             }else{ return true;}
          }
-          return true;
+         
      }
