@@ -1,8 +1,8 @@
 # Java-Encoding
 ![image](https://user-images.githubusercontent.com/50263561/119373252-e2d0a780-bcc0-11eb-9424-6403f280fedb.png)
   
- 
-     if(subcode == "" ||subcode ==null){return null;}
+
+ if(subcode == "" ||subcode ==null){return null;}
         
         for (int i = 0; i < subcode.length(); i++) {
             char ch = subcode.charAt(i);
@@ -33,5 +33,5 @@
         }
     
         String outputString = String.valueOf(output);
-        System.out.println(outputString.toUpperCase());
+        
         return outputString.toUpperCase();
